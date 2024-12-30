@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>拿鐵介紹 - 拿鐵愛好者的最愛</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Lora:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        /* 基本設置 */
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+            overflow-x: hidden;
+            opacity: 0;
+            animation: fadeIn 1s forwards;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* 頂部導航欄 */
+        .navbar {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 8px 18px;
+            border-radius: 30px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            z-index: 10;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            font-size: 1em; /* 調整字體大小 */
+            padding: 5px 12px;
+            border-radius: 20px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .navbar a:hover {
+            background-color: #9e5b3d;
+            transform: scale(1.1);
+        }
+
+        /* 首頁大圖區 */
+        .hero {
+            background-color: #9e5b3d;
+            color: #fff;
+            text-align: center;
+            padding: 80px 20px;  /* 調整上部與下部內邊距 */
+            font-size: 1.8em;     /* 縮小字體 */
+            animation: slideIn 1s ease-out;
+        }
+
+        @keyframes slideIn {
+            0% {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .hero h1 {
+            margin: 0;
+            font-size: 2.2em; /* 縮小標題字體大小 */
+            font-family: 'Lora', serif;
+        }
+
+        .hero p {
+            font-size: 1.1em; /* 縮小段落字體 */
+            margin-top: 15px;
+            font-family: 'Lora', serif;
+        }
+
+        /* 內容區域 */
+        .content {
+            padding: 60px 20px;
+            text-align: center; /* 讓文字內容居中 */
+            opacity: 0;
+            animation: fadeInContent 1.5s forwards;
+        }
+
+        @keyframes fadeInContent {
+            0% {
+                transform: translateY(30px);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .content img {
+            width: 90%;
+            max-width: 600px;
+            border-radius: 15px;
+            margin: 20px 0;
+            opacity: 0;
+            animation: fadeInImg 1s ease-out forwards;
+        }
+
+        @keyframes fadeInImg {
+            0% {
+                transform: translateY(30px);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .content h2 {
+            font-size: 2.5em;
+            color: #9e5b3d;
+            font-family: 'Lora', serif;
+            margin-bottom: 20px; /* 增加標題與段落的間距 */
+        }
+
+        .content p {
+            font-size: 1.1em;
+            line-height: 1.8;
+            max-width: 800px;
+            margin: 0 auto;
+            font-family: 'Lora', serif;
+        }
+
+        /* 製作方法區 */
+        #how-to-make {
+            background-color: #f9f9f9;
+            padding: 60px 20px;
+            text-align: center;  /* 讓標題和段落文字居中 */
+        }
+
+        ol {
+            text-align: left;
+            font-size: 1.1em;  /* 字體縮小 */
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        ol li {
+            margin: 15px 0;
+        }
+
+        /* 画廊區 */
+        #gallery {
+            padding: 60px 20px;
+            background-color: #fff;
+        }
+
+        .gallery {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .gallery img {
+            width: 300px;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            animation: fadeInGallery 1s forwards;
+        }
+
+        @keyframes fadeInGallery {
+            0% {
+                transform: translateY(30px);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        /* 底部 */
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            font-family: 'Lora', serif;
+            font-size: 1em;
+            margin-top: 60px;
+        }
+
+        footer a {
+            color: #ffcc00;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 導航欄 -->
+    <div class="navbar">
+        <a href="#">首頁</a>
+        <a href="#about">關於拿鐵</a>
+        <a href="#how-to-make">如何製作</a>
+        <a href="#gallery">畫廊</a>
+    </div>
+
+    <!-- 首頁大圖 -->
+    <div class="hero">
+        <h1>歡迎來到拿鐵的世界</h1>
+        <p>了解摩卡的歷史、風味及製作方法，讓我們一起深入探索這杯經典飲品！</p>
+    </div>
+
+    <!-- 內容區域 -->
+    <div id="about" class="content">
+        <h2>什麼是拿鐵？</h2>
+        <p>拿鐵是義大利發祥的飲品，在義大利語中Latte是「鮮奶」的意思。 沖泡時使用濃縮咖啡與發泡牛奶（以下統稱「奶泡」），薄薄一層奶泡厚度約為2mm 左右即可。 用咖啡機沖煮出30c.c.的濃縮咖啡後，把牛奶裝入鋼杯裡並使用咖啡機上的牛奶發泡器打發，記得要把奶泡打得均勻細緻，牛奶的溫度可以依照個人喜好調整。</p>
+        <img src="https://doqvf81n9htmm.cloudfront.net/data/crop_article/106544/shutterstock_521711431.jpg_1140x855.jpg" alt="摩卡咖啡">
+    </div>
+
+    <!-- 製作方法 -->
+    <div id="how-to-make" class="content">
+        <h2>如何製作拿鐵咖啡</h2>
+        <p>拿鐵咖啡的製作方式相對簡單，只需幾種食材即可在家中輕鬆完成：</p>
+        <ol>
+            <li><strong><p><p/>以1：3的比例混合義式濃縮咖啡、牛奶，並加上一層薄奶泡製作而成；以杯量比例來看，濃縮咖啡：熱牛奶：奶泡=1：3：1，因此牛奶香味較為濃厚，咖啡風味較淡，也常見咖啡拉花藝術的展現。</li>
+                </ul>
+            </li>
+        </ol>
+        <img src=https://img.shoplineapp.com/media/image_clips/667a1e7ea4f5a900113030cc/original.jpg?1719279229" alt="製作摩卡咖啡">
+    </div>
+
+    <!-- 画廊 -->
+    <div id="gallery" class="content">
+        <h2>拿鐵咖啡畫廊</h2>
+        <p>來看看一些美麗的拿鐵咖啡圖片，感受它的魅力。</p>
+        <div class="gallery">
+            <img src="https://img.shoplineapp.com/media/image_clips/62a36b95b1bde60027d4432b/original.png?1654877077" alt="摩卡咖啡1">
+            <img src="https://www.nespresso.com/ncp/res/uploads/recipes/nespresso-recipes-Mocca-Latte-1.jpg" alt="摩卡咖啡2">
+            <img src="https://caffes.me/wp-content/uploads/2023/02/10001-5.jpg?w=768" alt="摩卡咖啡3">
+        </div>
+    </div>
+
+    <!-- 底部 -->
+    <footer>
+        <p>&copy; 2024 摩卡咖啡愛好者 | <a href="mailto:contact@moka.com">聯絡我們</a></p>
+    </footer>
+
+</body>
+</html>
